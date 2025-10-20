@@ -26,6 +26,10 @@ Our approach focused on simplicity and generality to handle the diverse data in 
 - Stage 2 is based on nnXNet 0.5.0 version
 - Repository: [nnXNet 0.5.0](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/tree/master/nnXNet)
 
+**Model Checkpoint:**
+- Stage 1 model checkpoint: [rsna2025-stage1-model](https://www.kaggle.com/models/pengchengshi/dataset180_2d_vessel_box_seg_stable)
+- Stage 2 model checkpoint: [rsna2025-stage2-models](https://www.kaggle.com/models/pengchengshi/rsna2025-stage2-models)
+- 
 **For upcoming versions and paper, please follow:**  
 [nnX-Net: An Extensible Multi-task Learning Framework for Medical Imaging](https://github.com/yinghemedical/nnXNet)
 
