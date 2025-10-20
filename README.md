@@ -30,10 +30,4 @@ Our approach focused on simplicity and generality to handle the diverse data in 
 [nnX-Net: An Extensible Multi-task Learning Framework for Medical Imaging](https://github.com/yinghemedical/nnXNet)
 
 ## Acknowledgements
-
-Thanks to:
-- Medical Image Insights and UZH for compute support
-- Bjoern Menze and the Helmut Horten Foundation for funding support
-- RSNA/Kaggle hosts
-- [nnU-Net](https://github.com/MIC-DKFZ/nnUNet/tree/master) developers
-- Forum contributors
+Thanks to Medical Image Insights and UZH for compute support, Bjoern Menze and the Helmut Horten Foundation for funding support. We are grateful to RSNA/Kaggle hosts, [nnU-Net](https://github.com/MIC-DKFZ/nnUNet/tree/master) devs, and forum contributors.
