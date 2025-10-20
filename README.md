@@ -26,7 +26,7 @@ Our approach focused on simplicity and generality to handle the diverse data in 
 - Stage 2 is based on nnXNet 0.5.0 version
 - Repository: [nnXNet 0.5.0](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/tree/master/nnXNet)
 
-**For detailed versions and papers, please follow:**  
+**For upcoming versions and paper, please follow:**  
 [nnX-Net: An Extensible Multi-task Learning Framework for Medical Imaging](https://github.com/yinghemedical/nnXNet)
 
 ## Acknowledgements
