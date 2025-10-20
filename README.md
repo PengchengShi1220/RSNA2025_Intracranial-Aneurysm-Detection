@@ -17,12 +17,23 @@ Our approach focused on simplicity and generality to handle the diverse data in 
   - All data resized to uniform 224×224×224
   - Heavy TTA (8×) including left-right flips with label swapping
 
+## Code Resources
+
+**Inference Notebook:**  
+[bravecowcow-2nd-place-inference.ipynb](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/blob/master/bravecowcow-2nd-place-inference.ipynb)
+
 **Current Implementation:**
 - Stage 2 is based on nnXNet 0.5.0 version
-- Repository: https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/tree/master/nnXNet
+- Repository: [nnXNet 0.5.0](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/tree/master/nnXNet)
 
-**For detailed versions and papers, please follow:**
-https://github.com/yinghemedical/nnXNet
+**For detailed versions and papers, please follow:**  
+[nnX-Net: An Extensible Multi-task Learning Framework for Medical Imaging](https://github.com/yinghemedical/nnXNet)
 
 ## Acknowledgements
-Thanks to Medical Image Insights and UZH for compute support, Bjoern Menze and the Helmut Horten Foundation for funding support. We are grateful to RSNA/Kaggle hosts, [nnU-Net](https://github.com/MIC-DKFZ/nnUNet/tree/master) devs, and forum contributors.
+
+Thanks to:
+- Medical Image Insights and UZH for compute support
+- Bjoern Menze and the Helmut Horten Foundation for funding support
+- RSNA/Kaggle hosts
+- [nnU-Net](https://github.com/MIC-DKFZ/nnUNet/tree/master) developers
+- Forum contributors
