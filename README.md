@@ -25,7 +25,7 @@ Our approach focused on simplicity and generality to handle the diverse data in 
 ### Stage 1: 2D Segmentation Model
 The first stage uses nnUNetv2 for 2D vessel segmentation:
 
-**First stage training data (504 sample cases):** https://www.kaggle.com/datasets/pengchengshi/dataset180-2d-vessel-box-seg
+- Stage 1 training data ([504 sample cases](https://www.kaggle.com/datasets/pengchengshi/dataset180-2d-vessel-box-seg)), nnU-Net format:
 
 ```bash
 # Dataset planning and preprocessing
