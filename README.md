@@ -1,4 +1,4 @@
-# RSNA2025 Intracranial Aneurysm Detection - 2nd Place Solution
+# [RSNA2025 Intracranial Aneurysm Detection](https://www.kaggle.com/competitions/rsna-intracranial-aneurysm-detection) - 2nd Place Solution
 
 **Fast 2D tri-axial ROI extraction + 3D Multi-Task Segmentation and Classification**
 
