@@ -21,8 +21,8 @@ Our approach focused on simplicity and generality to handle the diverse data in 
 ## Code Resources
 
 **Inference Notebook:**  
-[bravecowcow-2nd-place-inference-demo.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference-demo)
-[bravecowcow-2nd-place-inference-final-submission.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference)
+- [bravecowcow-2nd-place-inference-demo.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference-demo)
+- [bravecowcow-2nd-place-inference-final-submission.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference)
 
 **Current Implementation:**
 - Stage 2 is based on nnXNet 0.5.0 version
