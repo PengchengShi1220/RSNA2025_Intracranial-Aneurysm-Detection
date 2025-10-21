@@ -25,14 +25,15 @@ Our approach focused on simplicity and generality to handle the diverse data in 
 1. Clone the repository:
 ```bash
 git clone https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection
-
+```
 2. Install requirements:
 ```bash
 pip install -r RSNA2025_Intracranial-Aneurysm-Detection/requirements.txt
-
+```
 3. Install nnXNet package:
 ```bash
 pip install -e RSNA2025_Intracranial-Aneurysm-Detection/nnXNet
+```
 
 # Detailed Training Procedure
 
