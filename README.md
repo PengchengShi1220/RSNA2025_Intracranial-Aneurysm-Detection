@@ -20,9 +20,23 @@ Our approach focused on simplicity and generality to handle the diverse data in 
   - All data resized to uniform 224×224×224
   - Heavy TTA (8×) including left-right flips with label swapping
 
-## Detailed Training Procedure
+# Installation Steps
 
-### Stage 1: 2D Segmentation Model
+1. Clone the repository:
+```bash
+git clone https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection
+
+2. Install requirements:
+```bash
+pip install -r RSNA2025_Intracranial-Aneurysm-Detection/requirements.txt
+
+3. Install nnXNet package:
+```bash
+pip install -e RSNA2025_Intracranial-Aneurysm-Detection/nnXNet
+
+# Detailed Training Procedure
+
+## Stage 1: 2D Segmentation Model
 The first stage uses nnUNetv2 for 2D vessel segmentation:
 
 - Stage 1 training data ([504 sample cases](https://www.kaggle.com/datasets/pengchengshi/dataset180-2d-vessel-box-seg)), nnU-Net format:
@@ -35,24 +49,24 @@ nnUNetv2_plan_and_preprocess -d 180 -c "2d" --verify_dataset_integrity
 nnUNetv2_train Dataset180_2D_vessel_box_seg 2d 0 -tr nnUNetTrainer --c
 ```
 
-### Stage 2: 3D Multi-task Learning
+## Stage 2: 3D Multi-task Learning
 The second stage employs nnXNet for 3D vessel anatomy and aneurysm segmentation with 26 classes:
 
-#### Initial Training (1000 epochs)
+### Initial Training (1000 epochs)
 ```bash
 nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_fullres 0 \
   -tr nnXNetTrainer_ResEncoderUNet_two_seg_with_cls_modality_CE_DC_AWDC_onlyMirror01 \
   -p nnXNetResEncUNetM_two_seg_with_cls_ps_224_224_224_Plans
 ```
 
-#### Fine-tuning Phase 1 (100 epochs)
+### Fine-tuning Phase 1 (100 epochs)
 ```bash
 nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_fullres 0 \
   -tr nnXNetTrainer_ResEncoderUNet_two_seg_with_cls_modality_CE_DC_AWDC_onlyMirror01_lr4e3_100epochs \
   -p nnXNetResEncUNetM_two_seg_with_cls_ps_224_224_224_Plans
 ```
 
-#### Fine-tuning Phase 2 (250 epochs)
+### Fine-tuning Phase 2 (250 epochs)
 ```bash
 nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_fullres 1 \
   -tr nnXNetTrainer_ResEncoderUNet_two_seg_with_cls_modality_CE_DC_AWDC_onlyMirror01_250epochs \
@@ -61,7 +75,7 @@ nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_full
 
 **Note:** Stage 2 training uses batch size = 2 with approximately 53GB GPU memory consumption.
 
-## Code Resources
+# Code Resources
 
 **Inference Notebook:**  
 - [bravecowcow-2nd-place-inference-demo.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference-demo)
