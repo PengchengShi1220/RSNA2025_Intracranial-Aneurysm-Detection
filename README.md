@@ -35,6 +35,11 @@ pip install -r RSNA2025_Intracranial-Aneurysm-Detection/requirements.txt
 pip install -e RSNA2025_Intracranial-Aneurysm-Detection/nnXNet
 ```
 
+# Processing DICOM to NIfTI
+Use [process_RSNA2025_all_data.py](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/blob/master/process_RSNA2025_all_data.py) to convert all DICOM images into individual .nii.gz files, while transforming the coordinates from `train_localizers.csv` into 3D NIfTI format with binary mask images centered around the 3D bounding boxes.
+
+DICOM to NIfTI conversion can be performed using `dicom2nifti`, with the `reorient_nii` function applied to standardize orientation to "LPS". This process is implemented according to [nifti_by_dicom2nifti.py](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/blob/master/nifti_by_dicom2nifti.py).
+
 # Detailed Training Procedure
 
 ## Stage 1: 2D Segmentation Model
