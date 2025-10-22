@@ -74,35 +74,6 @@ def extract_dicom_metadata(dicom_file, series_uid):
         log_message(series_uid, f"Error extracting metadata from {dicom_file}: {str(e)}", is_error=True)
         return None
 
-def run_dcm2niix(input_folder, output_folder, series_uid):
-    """
-    Convert multi-frame DICOM to NIfTI using dcm2niix.
-    """
-    os.makedirs(output_folder, exist_ok=True)
-    dcm2niix_cmd = [
-        'dcm2niix',
-        '-f', f'{series_uid}_0000',
-        '-p', 'y',
-        '-v', 'y',
-        '-z', 'y',
-        '-b', 'n',
-        '-o', output_folder,
-        input_folder
-    ]
-    try:
-        result = subprocess.run(dcm2niix_cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            log_message(series_uid, f"dcm2niix failed: {result.stderr}", is_error=True)
-            return None
-        output_file = os.path.join(output_folder, f"{series_uid}_0000.nii.gz")
-        if not os.path.exists(output_file):
-            log_message(series_uid, f"dcm2niix did not generate {output_file}", is_error=True)
-            return None
-        return output_file
-    except Exception as e:
-        log_message(series_uid, f"Error running dcm2niix: {str(e)}", is_error=True)
-        return None
-
 def process_single_series(series_uid, series_df, source_dicom_dir, images_output_dir, labels_single_output_dir, labels_box_output_dir, is_annotated=True):
     """
     Process a single SeriesInstanceUID: convert DICOM to NIfTI, extract metadata, and create masks.
@@ -128,35 +99,15 @@ def process_single_series(series_uid, series_df, source_dicom_dir, images_output
         return
 
     image = None
-    is_multiframe = False
-    try:
-        # Check if multi-frame
-        ds = pydicom.dcmread(dicom_names[0], force=True)
-        is_multiframe = ds.get('NumberOfFrames', 1) > 1
+    
+    # Convert DICOM to NIfTI (without reorientation)
+    orig_nii = dicom2nifti.dicom_series_to_nifti(
+        str(full_subdir_path), None, reorient_nifti=False
+    )['NII']
 
-        if is_multiframe:
-
-            # Convert DICOM to NIfTI (without reorientation)
-            orig_nii = dicom2nifti.dicom_series_to_nifti(
-                str(full_subdir_path), None, reorient_nifti=False
-            )['NII']
-        
-            # Reorient to LPS
-            img_orient = reorient_nii(orig_nii, targ_aff="LPS")
-            img_orient.to_filename(image_filename)
-        else:
-            # Single-frame:
-            # Convert DICOM to NIfTI (without reorientation)
-            orig_nii = dicom2nifti.dicom_series_to_nifti(
-                str(full_subdir_path), None, reorient_nifti=False
-            )['NII']
-        
-            # Reorient to LPS
-            img_orient = reorient_nii(orig_nii, targ_aff="LPS")
-            img_orient.to_filename(image_filename)
-    except Exception as e:
-        log_message(series_uid, f"Error processing series {series_uid}: {str(e)}")
-        return
+    # Reorient to LPS
+    img_orient = reorient_nii(orig_nii, targ_aff="LPS")
+    img_orient.to_filename(image_filename)
 
     size = img_orient.shape         
     spacing = img_orient.header.get_zooms()  
@@ -314,4 +265,5 @@ def main():
         list(tqdm(pool.imap(process_series_wrapper, all_args), total=len(all_args), desc="Processing all series"))
 
 if __name__ == "__main__":
+
     main()
