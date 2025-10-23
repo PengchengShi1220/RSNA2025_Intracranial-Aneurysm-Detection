@@ -20,6 +20,13 @@ Our approach focused on simplicity and generality to handle the diverse data in 
   - All data resized to uniform 224×224×224
   - Heavy TTA (8×) including left-right flips with label swapping
 
+# Hardware Used
+
+- CPU: Intel(R) Xeon(R) Platinum 8468 @2.10GHz
+- Memory: 512 GiB RAM
+- GPU: 1 × NVIDIA A100 80GB
+- Operating System: Ubuntu 22.04.4 LTS
+
 # Installation Steps
 
 1. Clone the repository:
