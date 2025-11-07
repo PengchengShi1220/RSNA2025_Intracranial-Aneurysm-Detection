@@ -48,7 +48,9 @@ dependencies = [
     "matplotlib",
     "seaborn",
     "imagecodecs",
-    "yacs"
+    "yacs",
+    "timm",
+    "einops"
 ]
 
 [project.urls]
