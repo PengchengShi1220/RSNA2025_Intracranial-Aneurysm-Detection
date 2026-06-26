@@ -98,7 +98,7 @@ nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_full
 [nnX-Net: An Extensible Multi-task Learning Framework for Medical Imaging](https://github.com/yinghemedical/nnXNet)
 
 ## Citation
-If you use cbDice in your research, please cite:
+Please cite our work if it is helpful for your research:
 
 ```
 @misc{shi2026intracranialaneurysmclassificationsegmentation,
