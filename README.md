@@ -3,8 +3,6 @@
 **Fast 2D tri-axial ROI extraction + 3D Multi-Task Segmentation and Classification**
 The solution write-up is available at: [RSNA2025 2nd-place-solution](https://www.kaggle.com/competitions/rsna-intracranial-aneurysm-detection/writeups/2nd-place-solution)
 
-# Training Instructions
-
 ## Overview
 
 Our approach focused on simplicity and generality to handle the diverse data in this classification-focused task.
@@ -20,14 +18,14 @@ Our approach focused on simplicity and generality to handle the diverse data in 
   - All data resized to uniform 224×224×224
   - Heavy TTA (8×) including left-right flips with label swapping
 
-# Hardware Used
+## Hardware Used
 
 - CPU: Intel(R) Xeon(R) Platinum 8468 @2.10GHz
 - Memory: 512 GiB RAM
 - GPU: 1 × NVIDIA A100 80GB
 - Operating System: Ubuntu 22.04.4 LTS
 
-# Installation Steps
+## Installation Steps
 
 1. Clone the repository:
 ```bash
@@ -42,12 +40,12 @@ pip install -r RSNA2025_Intracranial-Aneurysm-Detection/requirements.txt
 pip install -e RSNA2025_Intracranial-Aneurysm-Detection/nnXNet
 ```
 
-# Processing DICOM to NIfTI
+## Processing DICOM to NIfTI
 Use [process_RSNA2025_all_data.py](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/blob/master/process_RSNA2025_all_data.py) to convert all DICOM images into individual .nii.gz files, while transforming the coordinates from `train_localizers.csv` into 3D NIfTI format with binary mask images centered around the 3D bounding boxes.
 
 DICOM to NIfTI conversion can be performed using `dicom2nifti`, with the `reorient_nii` function applied to standardize orientation to "LPS". This process is implemented according to [nifti_by_dicom2nifti.py](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/blob/master/nifti_by_dicom2nifti.py).
 
-# Detailed Training Procedure
+## Detailed Training Procedure
 
 ## Stage 1: 2D Segmentation Model
 The first stage uses nnUNetv2 for 2D vessel segmentation:
@@ -88,7 +86,7 @@ nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_full
 
 **Note:** Stage 2 training uses batch size = 2 with approximately 53GB GPU memory consumption.
 
-# Code Resources
+## Code Resources
 
 **Inference Notebook:**  
 - [bravecowcow-2nd-place-inference-demo.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference-demo)
