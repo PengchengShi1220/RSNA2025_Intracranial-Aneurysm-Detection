@@ -94,8 +94,27 @@ nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_full
 - [bravecowcow-2nd-place-inference-demo.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference-demo)
 - [bravecowcow-2nd-place-inference-final-submission.ipynb](https://www.kaggle.com/code/pengchengshi/bravecowcow-2nd-place-inference)
 
-**For upcoming versions and paper, please follow:**  
-[nnX-Net: An Extensible Multi-task Learning Framework for Medical Imaging](https://github.com/yinghemedical/nnXNet)
+
+---
+
+## Model Availability
+
+ **Stage 1 ROI Model:** [Kaggle Models](https://www.kaggle.com/models/pengchengshi/dataset180_2d_vessel_box_seg_stable)
+ **Stage 2 Model Weights:** [Kaggle Models](https://www.kaggle.com/models/pengchengshi/dataset660_26classes_resize224_4661)
+
+---
+
+## 3D Slicer Plugin
+
+For clinical and research use, we packaged the two-stage framework as a 3D Slicer extension, supporting all four modalities (CTA, MRA, T2, T1-post) with configurable TTA levels (1×, 4×, 8×) and three output modes:
+- 14-class (vessel + merged aneurysm)
+- 13-class merged
+- 26-class (vessel + aneurysm)
+
+**Source code:** [https://github.com/murong-xu/SlicerBraveCowCow](https://github.com/murong-xu/SlicerBraveCowCow)  
+**Inference backend:** [https://github.com/huanghoujing/bravecowcow_inference_docker](https://github.com/huanghoujing/bravecowcow_inference_docker)
+
+---
 
 ## Citation
 Please cite our work if it is helpful for your research:
