@@ -97,5 +97,20 @@ nnXNet_train Dataset660_vessel_anatomy_aneurysm_26classes_resize224_4661 3d_full
 **For upcoming versions and paper, please follow:**  
 [nnX-Net: An Extensible Multi-task Learning Framework for Medical Imaging](https://github.com/yinghemedical/nnXNet)
 
+## Citation
+If you use cbDice in your research, please cite:
+
+```
+@misc{shi2026intracranialaneurysmclassificationsegmentation,
+      title={Intracranial Aneurysm Classification and Segmentation via Tri-Axial ROI and Multi-Task Learning}, 
+      author={Pengcheng Shi and Kaiyuan Yang and Houjing Huang and Jiawei Chen and Yan Lu and Jiaqi Liu and Murong Xu and Bjoern Menze and Xinglin Zhang},
+      year={2026},
+      eprint={2606.26706},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.26706}, 
+}
+```
+
 ## Acknowledgements
 Thanks to Medical Image Insights and UZH for compute support, Bjoern Menze and the Helmut Horten Foundation for funding support. We are grateful to RSNA/Kaggle hosts, [nnU-Net](https://github.com/MIC-DKFZ/nnUNet/tree/master) devs, and forum contributors.
