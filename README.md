@@ -3,7 +3,6 @@
 <div align="center">
 
 [![arXiv](https://img.shields.io/badge/arXiv-2606.26706-B31B1B.svg)](https://arxiv.org/abs/2606.26706)
-[![GitHub](https://img.shields.io/badge/GitHub-RSNA2025_Intracranial-Aneurysm-Detection-181717?logo=github&logoColor=white)](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 </div>
