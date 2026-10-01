@@ -149,7 +149,7 @@ Please cite our work if it is helpful for your research:
 
 ## License
 
-Codebase (the bravecowcow package and all source code in this repository) and model weights are licensed under the Apache License 2.0 - see the LICENSE file for details. Segmentation labels are released for research use only and are licensed under CC BY-NC 4.0.
+Codebase (the bravecowcow package and all source code in this repository) and model weights are licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/PengchengShi1220/RSNA2025_Intracranial-Aneurysm-Detection/blob/master/LICENSE) file for details. Segmentation labels are released for research use only and are licensed under CC BY-NC 4.0.
 
 ---
 
